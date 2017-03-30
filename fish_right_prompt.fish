@@ -16,6 +16,8 @@ end
 
 function fish_right_prompt
   set_color $fish_color_autosuggestion ^/dev/null; or set_color 555
+
+  date "+%H:%M:%S"
   __get_aws_profile
   __get_k8s_context
   set_color normal
