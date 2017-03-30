@@ -5,8 +5,12 @@ function __get_aws_profile
 end
 
 function __get_k8s_context
-  if test -n (kubectl config current-context)
-    echo -n "($k8s_context)"
+  if command --search kubectl > /dev/null
+    set -l k8s_context (kubectl config current-context)
+
+    if test -n "$k8s_context"
+      echo -n "($k8s_context)"
+    end
   end
 end
 
