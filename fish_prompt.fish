@@ -10,7 +10,7 @@ function fish_prompt
   set -l diverged "⥄ "
   set -l fish     (test (uname) = Darwin; and echo "⋊>"; or echo "⋊ >")
 
-  set -l clean_color      (set color green)
+  set -l clean_color      (set_color green)
   set -l error_color      (set_color $fish_color_error ^/dev/null; or set_color red)
   set -l normal_color     (set_color normal)
   set -l touched_color    (set_color yellow)
